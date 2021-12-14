@@ -4,7 +4,7 @@ from locators import *
 
 class SearchHelper(BasePage):
 
-    def enter_text(self, text):
+    def enter_search_term(self, text):
         search_field = self.find_element(MainPageLocators.SEARCH_FIELD)
         search_field.send_keys(text)
         return search_field
