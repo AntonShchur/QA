@@ -17,15 +17,15 @@ class Test_rozetka(TestCase):
     def test_search_button(self):
         text_to_search = "rtx 3080"
         main_page = SearchHelper(self.driver)
-        main_page.enter_text(text_to_search)
+        main_page.enter_search_term(text_to_search)
         main_page.click_on_the_search_button()
         assert text_to_search.lower() in main_page.find_text().lower()
 
     def test_search_field(self):
         text_to_search = "rtx 3070"
         main_page = SearchHelper(self.driver)
-        main_page.enter_text(text_to_search)
-        main_page.enter_text(Keys.ENTER)
+        main_page.enter_search_term(text_to_search)
+        main_page.enter_search_term(Keys.ENTER)
         assert text_to_search.lower() in main_page.find_text().lower()
 
     def test_goods_filter(self):
